@@ -5,3 +5,7 @@ date: "2022-09-20"
 output: html_document
 ---
 # Data Wrangling 1
+```{r}
+library(tidyverse)
+```
+
