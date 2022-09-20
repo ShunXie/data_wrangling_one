@@ -81,6 +81,15 @@ write_csv(intr_words_df,file = "results/intr_words_df.csv")
 
 
 
+## why not base r???
+
+```{r}
+#dont use read.csv, instead use read_csv
+dont_do_this_df = read.csv("data/FAS_litters.csv")
+```
+
+
+
 
 
 
