@@ -375,6 +375,8 @@ pre code {
 ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(&#39;readxl&#39;)
+library(&#39;haven&#39;)</code></pre>
 <div id="data-import-csvs" class="section level2">
 <h2>Data Import: CSVs</h2>
 <p>Let’s import data using the ‘readr’ package.</p>
@@ -640,21 +642,21 @@ pre code {
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
-<div id="other-file-format" class="section level1">
-<h1>Other file format</h1>
-<p>I’m an R Markdown document!</p>
+<div id="other-file-format" class="section level2">
+<h2>Other file format</h2>
+<p>We need to read in an excel document</p>
+<pre class="r"><code>mlb.df &lt;- read_excel(&#39;data/mlb11.xlsx&#39;)</code></pre>
+<pre class="r"><code>view(mlb.df)</code></pre>
+<pre class="r"><code>intr_words_df=read_excel(&quot;data/mlb11.xlsx&quot;,range=&quot;B3:D6&quot;)</code></pre>
 </div>
-<div id="section-1" class="section level1">
-<h1>Section 1</h1>
-<p>Here’s a <strong>code chunk</strong> that samples from a <em>normal
-distribution</em>:</p>
-<pre class="r"><code>samp = rnorm(100)
-length(samp)</code></pre>
-<pre><code>## [1] 100</code></pre>
+<div id="still-more-formats" class="section level2">
+<h2>Still More formats…</h2>
+<p>Read in a SAS format:</p>
+<pre class="r"><code>pulse_df &lt;- read_sas(&quot;data/public_pulse_data.sas7bdat&quot;)</code></pre>
 </div>
-<div id="section-2" class="section level1">
-<h1>Section 2</h1>
-<p>I can take the mean of the sample, too! The mean is -0.0402727.</p>
+<div id="data-export" class="section level2">
+<h2>Data export</h2>
+<pre class="r"><code>write_csv(intr_words_df,file = &quot;results/intr_words_df.csv&quot;)</code></pre>
 </div>
 
 

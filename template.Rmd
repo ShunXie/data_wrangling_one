@@ -5,6 +5,8 @@ output: html_document
 
 ```{r}
 library('tidyverse')
+library('readxl')
+library('haven')
 ```
 
 
@@ -47,32 +49,44 @@ litter_NA_df <- read_csv('data/FAS_litters.csv', na = c("","NA",999,88),skip = 2
 
 
 
-# Other file format
+## Other file format
 
-
-
-
-
-
-
-
-
-
-
-
-I'm an R Markdown document! 
-
-# Section 1
-
-Here's a **code chunk** that samples from 
-a _normal distribution_:
+We need to read in an excel document
 
 ```{r}
-samp = rnorm(100)
-length(samp)
+mlb.df <- read_excel('data/mlb11.xlsx')
 ```
 
-# Section 2
+```{r,eval = FALSE}
+view(mlb.df)
+```
 
-I can take the mean of the sample, too!
-The mean is `r mean(samp)`.
+```{r}
+intr_words_df=read_excel("data/mlb11.xlsx",range="B3:D6")
+```
+
+
+## Still More formats...
+Read in a SAS format:
+
+```{r}
+pulse_df <- read_sas("data/public_pulse_data.sas7bdat")
+```
+
+## Data export
+
+```{r}
+write_csv(intr_words_df,file = "results/intr_words_df.csv")
+```
+
+
+
+
+
+
+
+
+
+
+
+
