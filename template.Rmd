@@ -1,7 +1,64 @@
 ---
-title: "Simple document"
+title: "Data Import"
 output: html_document
 ---
+
+```{r}
+library('tidyverse')
+```
+
+
+
+## Data Import: CSVs
+
+Let's import data using the 'readr' package.
+```{r}
+litter_df <- read_csv('data/FAS_litters.csv')
+litter_df <- janitor::clean_names(litter_df) #use clean_names from specifically janitor packages
+
+
+```
+
+```{r}
+litter_df
+
+head(litter_df)
+tail(litter_df)
+
+```
+
+```{r,eval=FALSE}
+view(litter_df)
+
+```
+
+
+```{r}
+skimr::skim(litter_df)
+```
+
+
+"read_csv" options:
+
+```{r}
+litter_NA_df <- read_csv('data/FAS_litters.csv', na = c("","NA",999,88),skip = 2)
+
+```
+
+
+
+# Other file format
+
+
+
+
+
+
+
+
+
+
+
 
 I'm an R Markdown document! 
 
