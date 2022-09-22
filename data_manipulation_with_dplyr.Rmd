@@ -6,7 +6,46 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.width = 6,
+  fig.asp = .6,
+  out.width = "90%"
+  )
 ```
 
 Once you've import the data, you're going to need to do some cleaning up. 
+
+```{r}
+library(tidyverse)
+options(tibble.print_min=3)
+
+litters_data = read_csv('data/FAS_litters.csv')
+litters_data = janitor::clean_names(litters_data)
+
+```
+
+
+```{r}
+pups_datat =read_csv('data/FAS_pups.csv')
+pups_datat = janitor::clean_names(pups_datat)
+
+```
+
+```{r}
+select(litters_data,group,litter_number, gd0_weight,pups_born_alive)
+```
+
+
+
+
+```{r}
+#select a range of variables 
+select(litters_data, group:gd_of_birth)
+```
+
+
+```{r}
+
+```
+
