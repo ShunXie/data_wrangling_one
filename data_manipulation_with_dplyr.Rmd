@@ -1,0 +1,12 @@
+---
+title: "Data Manipulation with dplyr"
+author: "Shun Xie"
+date: "2022-09-22"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Once you've import the data, you're going to need to do some cleaning up. 
